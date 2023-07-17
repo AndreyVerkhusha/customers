@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  color: #1D2025;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: normal;
+  font-family: 'Inter', sans-serif;
+}
+:root {
+  --linear: all .3s linear;
+  --grey: #7D7F83;
+}
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  width: 5px;
+}
