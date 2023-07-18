@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import Sidebar from "@/components/Layout/Sidebar/Sidebar";
 
@@ -11,8 +11,10 @@ const Content = styled.div`
   flex-direction: column;
 `;
 const Layout = () => {
+    const {pathname} = useLocation();
     return (
         <Wrapper>
+            {pathname === "/" && <Navigate to="/dashboard"/>}
             <Sidebar/>
             <Content>
                 <Outlet/>

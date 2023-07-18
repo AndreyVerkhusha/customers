@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { routes } from "@/routes";
 import Layout from "@/components/Layout/Layout";
@@ -18,6 +18,7 @@ function App() {
                             />
                         )}
                     </Route>
+                    <Route path={"*"} element={<Navigate to={"/dashboard"}/>}/>
                 </Routes>
             </AnimatePresence>
         </div>
