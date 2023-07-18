@@ -7,6 +7,7 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
 `;
 const StatisticCard = () => {
+
     const listCards: { label: string, value: string, percent: string }[] = [
         {label: "Revenue", value: "€43.400", percent: "23.36%"},
         {label: "New customers", value: "130", percent: "23.36%"},
