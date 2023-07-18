@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setValue } from "@/store/reducers/reducer";
 import styled, { css } from "styled-components";
+import { RootState } from "@/store/store";
 
 import ListNav from "@/components/Layout/Sidebar/ListNav/ListNav";
 import ListTags from "@/components/Layout/Sidebar/ListTags/ListTags";
@@ -8,9 +9,6 @@ import ListTags from "@/components/Layout/Sidebar/ListTags/ListTags";
 import { ReactComponent as Collapse } from "@/assets/sidebar/collapse.svg";
 import react_icon from "@/assets/sidebar/react_icon.svg";
 import profile from "@/assets/sidebar/profile.png";
-import { RootState } from "@/store/store";
-
-
 
 const CollapseIcon = styled.div<{ open: boolean }>`
   position: absolute;
@@ -30,6 +28,7 @@ const CollapseIcon = styled.div<{ open: boolean }>`
 
   svg {
     transition: var(--linear);
+    transform: rotate(180deg);
   }
 
   &:hover {
@@ -39,7 +38,7 @@ const CollapseIcon = styled.div<{ open: boolean }>`
 
   ${({open}) => open && css`
     svg {
-      transform: rotate(180deg);
+      transform: rotate(0deg);
     }
   `}
 `;
@@ -80,7 +79,7 @@ const Wrapper = styled.div<{ open: boolean }>`
   border-right: 1px solid rgba(0, 0, 0, 0.16);
   box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.40), 0 5px 10px 0 rgba(0, 0, 0, 0.20);
   transition: var(--linear);
-  
+
   ${({open}) => !open && css`
     max-width: 52px;
 
@@ -109,7 +108,7 @@ const Sidebar = () => {
                 </Profile>
             </Header>
             <ListNav open={open}/>
-            <ListTags/>
+            <ListTags open={open}/>
             <CollapseIcon
                 open={open}
                 onClick={() => dispatch(setValue(!open))}
