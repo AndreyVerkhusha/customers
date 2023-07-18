@@ -4,11 +4,9 @@ import styled from "styled-components";
 import discord_icon from "@/assets/dashboard/discord_icon.svg";
 import git_icon from "@/assets/dashboard/git_icon.svg";
 import telegram_icon from "@/assets/dashboard/telegram_icon.svg";
-import StatisticCard from "@/pages/Dashboard/StatisticCard/StatisticCard";
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+
 `;
 const HeaderContent = styled.div`
   display: flex;
@@ -44,9 +42,6 @@ const Button = styled.div`
     background: var(--active);
   }
 `;
-const Content = styled.div`
-  padding: 50px 40px;
-`;
 const Dashboard = () => {
     const socialButtons: { icon: string, link: string }[] = [
         {icon: discord_icon, link: "#"},
@@ -72,9 +67,6 @@ const Dashboard = () => {
                     </Social>
                 </HeaderContent>
             </Header>
-            <Content>
-                <StatisticCard/>
-            </Content>
         </Wrapper>
     );
 };
