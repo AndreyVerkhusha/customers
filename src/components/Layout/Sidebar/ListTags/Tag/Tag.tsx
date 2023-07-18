@@ -5,14 +5,9 @@ type Props = {
     color: string
     label: string
     count: number
+    open: boolean
 }
 
-const Wrapper = styled.div`
-  padding: 6px 12px;
-  display: flex;
-  align-items: center;
-  width: 100%;
-`;
 const Figure = styled.div<{ color: string }>`
   margin-right: 8px;
   width: 14px;
@@ -30,9 +25,34 @@ const Label = styled.div`
 const Count = styled.div`
   color: var(--grey);
 `;
-const Tag: FC<Props> = ({count, label, color}) => {
+const Wrapper = styled.div<{ open: boolean }>`
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  ${({open}) => !open && css`;
+    margin: 0;
+    padding: 6px 0;
+    justify-content: center;
+    width: 34px;
+
+    &:first-child {
+      margin-top: 25px;
+    }
+
+    ${Figure} {
+      margin: 0;
+    }
+
+    ${Label}, ${Count} {
+      display: none;
+    }
+  `}
+`;
+const Tag: FC<Props> = ({count, label, color, open}) => {
     return (
-        <Wrapper>
+        <Wrapper open={open}>
             <Figure color={color}/>
             <Label>{label}</Label>
             <Count>{count}</Count>
