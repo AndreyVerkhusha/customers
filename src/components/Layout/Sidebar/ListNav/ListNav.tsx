@@ -20,11 +20,11 @@ const Li = styled.li<{ active: boolean }>`
   }
 
   &:hover {
-    background: #E7E7E8;
+    background: var(--active);
   }
 
-  ${(props) => props.active && css`;
-    background: #E7E7E8;
+  ${({active}) => active && css`;
+    background: var(--active);
   `}`;
 const Wrapper = styled.ul<{ open: boolean }>`
   margin-bottom: 10px;
@@ -34,7 +34,17 @@ const Wrapper = styled.ul<{ open: boolean }>`
     max-width: 52px;
 
     ${Li} {
+      display: flex;
+      justify-content: center;
+      width: 31px;
 
+      img {
+        margin: 0 0 0 1px;
+      }
+
+      span {
+        display: none;
+      }
     }
   `}
 `;
