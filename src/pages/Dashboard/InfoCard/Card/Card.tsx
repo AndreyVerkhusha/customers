@@ -9,6 +9,7 @@ const Wrapper = styled.div.attrs<{index: number}>({
   margin: 30px 20px 0 0;
   padding: 20px 20px 10px;
   width: 100%;
+  max-width: 550px;
   border: 1px solid var(--black-alpha-200, rgba(0, 0, 0, 0.08));
   border-radius: 8px;
   
