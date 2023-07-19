@@ -6,6 +6,7 @@ const Wrapper = styled.div`
   width: 100%;
   transition: var(--linear);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  position: sticky;
 `;
 const Header = ({children}: { children: ReactNode }) => {
     return (

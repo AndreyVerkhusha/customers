@@ -1,10 +1,11 @@
-import Header from "@/components/Header/Header";
 import styled from "styled-components";
+import StatisticCard from "@/pages/Dashboard/StatisticCard/StatisticCard";
+import Header from "@/components/Header/Header";
 
 import discord_icon from "@/assets/dashboard/discord_icon.svg";
 import git_icon from "@/assets/dashboard/git_icon.svg";
 import telegram_icon from "@/assets/dashboard/telegram_icon.svg";
-import StatisticCard from "@/pages/Dashboard/StatisticCard/StatisticCard";
+import InfoCard from "@/pages/Dashboard/InfoCard/InfoCard";
 
 const Wrapper = styled.div`
   display: flex;
@@ -74,6 +75,7 @@ const Dashboard = () => {
             </Header>
             <Content>
                 <StatisticCard/>
+                <InfoCard/>
             </Content>
         </Wrapper>
     );
