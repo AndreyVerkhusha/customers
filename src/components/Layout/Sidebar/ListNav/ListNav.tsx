@@ -29,7 +29,7 @@ const Li = styled.li<{ active: boolean }>`
 const Wrapper = styled.ul<{ open: boolean }>`
   margin-bottom: 10px;
   width: 100%;
-  
+
   ${({open}) => !open && css`
     max-width: 52px;
 
@@ -48,14 +48,14 @@ const Wrapper = styled.ul<{ open: boolean }>`
     }
   `}
 `;
-const ListNav = ({open}: {open: boolean}) => {
+const ListNav = ({open}: { open: boolean }) => {
     const navigate = useNavigate();
     const location = useLocation();
 
     const listNavigation: { icon: string, label: string, url: string }[] = [
-        {icon: dashboard_icon, label: "Dashboard", url: "/dashboard"},
         {icon: inbox_icon, label: "Inbox", url: "/inbox"},
-        {icon: contacts_icon, label: "Contacts", url: "/contacts"}
+        {icon: contacts_icon, label: "Contacts", url: "/contacts"},
+        {icon: dashboard_icon, label: "Dashboard", url: "/dashboard"}
     ];
     return (
         <Wrapper open={open}>
