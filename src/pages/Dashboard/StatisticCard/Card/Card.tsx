@@ -2,7 +2,9 @@ import styled from "styled-components";
 import { FC } from "react";
 import arrow from "@/assets/dashboard/arrow.svg";
 
-const Wrapper = styled.div`
+const Wrapper = styled.div.attrs({
+    className: "shadow_button-effect"
+})`
   padding: 20px;
   margin-right: 20px;
   max-width: 265px;
@@ -10,13 +12,6 @@ const Wrapper = styled.div`
   color: var(--text_dark);
   border-radius: 8px;
   border: 1px solid var(--black-alpha-200, rgba(0, 0, 0, 0.08));
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 3px 3px 2px 2px rgba(0, 0, 0, 0.10);
-  transition: var(--linear);
-
-  &:hover {
-    transform: translate(3px, 3px);
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 1px 1px 1px 1px rgba(0, 0, 0, 0.10);
-  }
 
   &:last-child {
     margin-right: 0;

@@ -12,12 +12,24 @@ body {
   line-height: normal;
   font-family: 'Inter', sans-serif;
 }
+
+.shadow_button-effect {
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 3px 3px 2px 2px rgba(0, 0, 0, 0.10);
+  transition: var(--linear);
+
+  &:hover {
+    transform: translate(3px, 3px);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 1px 1px 1px 1px rgba(0, 0, 0, 0.10);
+  }
+}
+
 :root {
   --linear: all .3s linear;
   --grey: #7D7F83;
   --active: #E7E7E8;
   --text_dark: #33373D;
 }
+
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
